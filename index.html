@@ -1227,6 +1227,7 @@ vf:google_tag_manager["rm"]["9615461"](137)})}});</script><div id="batBeacon8062
 <script id="kd-local-media-fallback">
 (function () {
   var folder = './Kubaka Tours & Safari_files/';
+  var mediaFolder = './media/';
   var imageFallbacks = [
     'stone-town.jpeg', '1000203.jpg', '1006512.jpg', '1007209.jpg',
     '1007216.jpg', '1007227.jpg', 'kubaka-foundation.jpg', 'caregiver.jpeg',
@@ -1235,7 +1236,7 @@ vf:google_tag_manager["rm"]["9615461"](137)})}});</script><div id="batBeacon8062
     'solar.jpeg', 'resorts-pool.jpg'
   ];
   var imageIndex = 0;
-  var videoFallback = folder + 'hero-video-b.mp4';
+  var videoFallback = mediaFolder + 'hero-video-b.mp4';
 
   function useImageFallback(image) {
     if (image.getAttribute('data-kd-media-fallback')) { return; }
@@ -1255,16 +1256,36 @@ vf:google_tag_manager["rm"]["9615461"](137)})}});</script><div id="batBeacon8062
     if (play && play.catch) { play.catch(function () {}); }
   }
 
+  function handleFileProtocol(video) {
+    if (location.protocol !== 'file:') { return; }
+    video.setAttribute('poster', folder + 'apartments-video-poster.jpg');
+    video.pause();
+    video.removeAttribute('src');
+    var sources = video.querySelectorAll('source');
+    for (var i = 0; i < sources.length; i += 1) { sources[i].remove(); }
+    video.load();
+  }
+
   function scan(root) {
     var images = root.querySelectorAll ? root.querySelectorAll('img') : [];
     var videos = root.querySelectorAll ? root.querySelectorAll('video') : [];
-    for (var i = 0; i < images.length; i += 1) { useImageFallback(images[i]); }
+    for (var i = 0; i < images.length; i += 1) {
+      if (images[i].id === 'batBeacon180215761604') {
+        images[i].remove();
+      } else {
+        useImageFallback(images[i]);
+      }
+    }
     for (var j = 0; j < videos.length; j += 1) {
+      handleFileProtocol(videos[j]);
       videos[j].addEventListener('error', function () { useVideoFallback(this); }, { once: true });
     }
   }
 
   scan(document);
+  if (location.protocol === 'file:') {
+    setTimeout(function () { scan(document); }, 1200);
+  }
   if (typeof MutationObserver !== 'undefined') {
     new MutationObserver(function (records) {
       for (var i = 0; i < records.length; i += 1) {
