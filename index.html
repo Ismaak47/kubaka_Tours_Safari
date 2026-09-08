@@ -1224,4 +1224,57 @@ vf:google_tag_manager["rm"]["9615461"](137)})}});</script><div id="batBeacon8062
 })();
 </script>
 
+<script id="kd-local-media-fallback">
+(function () {
+  var folder = './Kubaka Tours & Safari_files/';
+  var imageFallbacks = [
+    'stone-town.jpeg', '1000203.jpg', '1006512.jpg', '1007209.jpg',
+    '1007216.jpg', '1007227.jpg', 'kubaka-foundation.jpg', 'caregiver.jpeg',
+    'chakula.jpeg', 'farm.jpeg', 'hospital.jpeg', 'kisima.jpeg',
+    'masomonje.jpeg', 'medical.jpeg', 'msikiti.jpeg', 'school.jpeg',
+    'solar.jpeg', 'resorts-pool.jpg'
+  ];
+  var imageIndex = 0;
+  var videoFallback = folder + 'hero-video-b.mp4';
+
+  function useImageFallback(image) {
+    if (image.getAttribute('data-kd-media-fallback')) { return; }
+    var src = image.currentSrc || image.src || '';
+    if (src.indexOf('file:') === 0 || src.indexOf(folder) !== -1) { return; }
+    image.setAttribute('data-kd-media-fallback', '1');
+    image.src = folder + imageFallbacks[imageIndex % imageFallbacks.length];
+    imageIndex += 1;
+  }
+
+  function useVideoFallback(video) {
+    if (video.getAttribute('data-kd-media-fallback')) { return; }
+    video.setAttribute('data-kd-media-fallback', '1');
+    video.src = videoFallback;
+    video.load();
+    var play = video.play();
+    if (play && play.catch) { play.catch(function () {}); }
+  }
+
+  function scan(root) {
+    var images = root.querySelectorAll ? root.querySelectorAll('img') : [];
+    var videos = root.querySelectorAll ? root.querySelectorAll('video') : [];
+    for (var i = 0; i < images.length; i += 1) { useImageFallback(images[i]); }
+    for (var j = 0; j < videos.length; j += 1) {
+      videos[j].addEventListener('error', function () { useVideoFallback(this); }, { once: true });
+    }
+  }
+
+  scan(document);
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(function (records) {
+      for (var i = 0; i < records.length; i += 1) {
+        for (var j = 0; j < records[i].addedNodes.length; j += 1) {
+          if (records[i].addedNodes[j].nodeType === 1) { scan(records[i].addedNodes[j]); }
+        }
+      }
+    }).observe(document.documentElement, { childList: true, subtree: true });
+  }
+})();
+</script>
+
 </body><iframe id="goog_plcm_frame" src="./Kubaka Tours & Safari_files/partnerpixels.html" style="display: none !important;"></iframe></html>
