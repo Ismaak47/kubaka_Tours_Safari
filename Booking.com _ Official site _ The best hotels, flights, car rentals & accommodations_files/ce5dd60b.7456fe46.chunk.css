@@ -1,0 +1,6 @@
+.trip-types-carousel-more-workaround nav[data-testid=webcore-filter-carousel-tabs] ul>li[role=presentation]{display:none}
+.ef34c138b1{display:flex;flex-direction:column;height:100%;border-radius:var(--bui_border_radius_200);overflow:hidden;mask-image:none;-webkit-mask-image:radial-gradient(#fff,#000)}.ef34c138b1 .edaf5df94d{opacity:0;transition:opacity .15s ease-out}.ef34c138b1:hover .edaf5df94d{opacity:1}
+.b7adbeb659{padding:var(--bui_spacing_4x);background:var(--bui_color_background_base);border:1px solid var(--bui_color_border_alt);border-radius:var(--bui_border_radius_200)}.ff7da47b68{padding:var(--bui_spacing_4x);background-color:var(--bui_color_white);border:1px solid var(--bui_color_border_alt)}.ff7da47b68 li a{text-decoration:none}
+.eb44976c56{width:100%}.b7fee78385{padding-top:var(--bui_spacing_1x)}.de707fcc9b{padding-left:var(--bui_spacing_4x);font-size:var(--bui_font_body_1_font-size)}
+
+/*# sourceMappingURL=https://istatic.booking.com/internal-static/capla/static/css/ce5dd60b.7456fe46.chunk.css.map*/
