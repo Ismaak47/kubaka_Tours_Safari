@@ -1214,7 +1214,9 @@ vf:google_tag_manager["rm"]["9615461"](137)})}});</script><div id="batBeacon8062
   function updateHeroSubtitle() {
     var elements = document.querySelectorAll('[data-testid="herobanner-subtitile"]');
     for (var i = 0; i < elements.length; i += 1) {
-      elements[i].textContent = subtitle;
+      if (elements[i].textContent !== subtitle) {
+        elements[i].textContent = subtitle;
+      }
     }
   }
   updateHeroSubtitle();
