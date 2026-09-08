@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Kidundo Travel Agency</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #F2F2F7;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 12px;
+  }
+  .card {
+    width: 100%;
+    max-width: 460px;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  }
+  .card__head {
+    background: #003B95;
+    padding: 26px 28px 22px;
+  }
+  .card__head h1 {
+    color: #fff;
+    font-size: 21px;
+    line-height: 1.2;
+  }
+  .card__head p {
+    color: #F0B429;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .card__body { padding: 24px 28px 28px; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .field input,
+  .field textarea {
+    width: 100%;
+    border: 1px solid #E5E5EA;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #111;
+    background: #FAFAFC;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    border-color: #007AFF;
+    box-shadow: 0 0 0 3px rgba(0,122,255,.15);
+    background: #fff;
+  }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .btn {
+    width: 100%;
+    background: #007AFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn:hover { background: #0069E0; }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .msg {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .msg.is-show { display: block; }
+  .msg--success { background: #E6F7EC; color: #1E7A3C; border: 1px solid #B7E8C6; }
+  .msg--error { background: #FDEBEB; color: #C0392B; border: 1px solid #F5C6C6; }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card__head">
+      <h1>Contact Us</h1>
+      <p>Kidundo Travel Agency</p>
+    </div>
+    <div class="card__body">
+      <form id="contactForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="btn">Send Message</button>
+      </form>
+      <div id="formStatus" class="msg" role="alert"></div>
+    </div>
+  </div>
+
+<script>
+  (function () {
+    var form = document.getElementById('contactForm');
+    var btn = document.getElementById('submitBtn');
+    var status = document.getElementById('formStatus');
+
+    emailjs.init('fD-VZYn3on2DVCYmt');
+
+    function showMessage(text, type) {
+      status.textContent = text;
+      status.className = 'msg is-show msg--' + type;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.className = 'msg';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      emailjs.sendForm('service_b402f4q', 'template_qyeuhzd', form, 'fD-VZYn3on2DVCYmt')
+        .then(function () {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          form.reset();
+          showMessage('Your message has been sent! We will get back to you soon. JazakAllah Khair.', 'success');
+        })
+        .catch(function (err) {
+          btn.textContent = 'Send Message';
+          btn.disabled = false;
+          var detail = (err && err.text) ? err.text : (err && err.message) ? err.message : String(err);
+          showMessage('Failed to send: ' + detail, 'error');
+          console.error('EmailJS error:', err);
+        });
+    });
+  })();
+</script>
+
+</body>
+</html>
