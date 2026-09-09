@@ -245,6 +245,14 @@ body .Header_root .Header_main svg,
 body .Header_root .Header_tab svg {
     fill: #003580 !important;
 }
+
+/* ===== Search bar: convert gold/amber container border to seamless white ===== */
+body [data-testid="searchbox-layout-wide"] {
+    background-color: #ffffff;
+}
+body [data-testid="searchbox-layout-wide"] > div:last-child {
+    background-color: #ffffff;
+}
 </style>
 </head>
   <body data-bui-theme="traveller-light" data-capla-fpr="true" style="isolation: isolate;" data-bui-keyboard="">
