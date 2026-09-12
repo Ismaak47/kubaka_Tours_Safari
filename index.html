@@ -279,6 +279,13 @@ body [data-testid="searchbox-layout-wide"] .dc6e4674ea button[type="submit"] {
     padding-left: 0;
     padding-right: 0;
 }
+/* Mobile only: center the search button when fields stack; on desktop the cell is
+   exactly button-width so auto margins resolve to 0 (no-op, geometry unchanged) */
+@media (max-width: 999.98px) {
+    body [data-testid="searchbox-layout-wide"] .dc6e4674ea button[type="submit"] {
+        margin-inline: auto;
+    }
+}
 body [data-testid="searchbox-layout-wide"] .e2d98352ed > span[data-testid="searchbox-form-button-icon"] {
     position: absolute;
     inset-inline-end: 0;
