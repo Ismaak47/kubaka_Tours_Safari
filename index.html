@@ -623,7 +623,81 @@ vf:google_tag_manager["rm"]["9615461"](126)})}});</script><iframe id="universal_
     if(typeof sel.showPicker==="function"){try{sel.showPicker();}catch(err){}}
   },true);
 })();
-</script></body>
+</script><!-- Conditional search filter logic: choosing "Zanzibar" as destination swaps the
+     Specialized Tour dropdown to the 24 Zanzibar excursions; any other destination
+     restores the default tour types. Safari Style is independent and unaffected.
+     The default option list is snapshotted from the DOM at load (single source of
+     truth), the current selection is preserved when still valid, and the select
+     element/classes are never replaced - only its <option> children, so styling
+     and layout cannot glitch. -->
+<script>
+(function () {
+    'use strict';
+    var dest = document.getElementById('searchbox-horizontal-destination-input');
+    var tour = document.getElementById('searchbox-tour-type');
+    if (!dest || !tour) return;
+
+    var ZANZIBAR_TOURS = [
+        'Stone Town Tour', 'Prison Island Tour', 'Nakupenda Tour', 'Spice Farm Tour',
+        'Jozani Forest Tour', 'Safari Blue Tour', 'Mnemba Island Tour', 'Dolphin Tour',
+        'Kuza Cave Tour', 'Salaam Cave Tour', 'Blue Lagoon', 'Starfish Tour',
+        'Turtle Aquarium Tour', 'Kendwa Beach Tour', 'Nungwi Village Tour', 'Paje Beach Tour',
+        'The Rock Restaurant', 'Sunset Dhow Cruise', 'Swahili Cooking Class', 'Forodhani Night Market',
+        'Mangrove Canoe Tour', 'Cultural Village Tour', 'Quad Bike Tour', 'Island Excursion Tour'
+    ];
+    var PLACEHOLDER = 'Select tour type';
+
+    // snapshot the original options (placeholder + default tour types) at load
+    var DEFAULT_OPTIONS = [];
+    for (var i = 0; i < tour.options.length; i++) {
+        DEFAULT_OPTIONS.push({ value: tour.options[i].value, text: tour.options[i].textContent });
+    }
+    var DEFAULT_LIST = DEFAULT_OPTIONS.slice(1); // without the placeholder row
+
+    function slugify(name) {
+        return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    function hasValue(select, val) {
+        for (var j = 0; j < select.options.length; j++) {
+            if (select.options[j].value === val) return true;
+        }
+        return false;
+    }
+
+    // rebuild only the <option> children; keep the selection if it still exists
+    function setOptions(list) {
+        var current = tour.value;
+        tour.innerHTML = '';
+        var ph = document.createElement('option');
+        ph.value = '';
+        ph.textContent = PLACEHOLDER;
+        tour.appendChild(ph);
+        for (var k = 0; k < list.length; k++) {
+            var o = document.createElement('option');
+            o.value = list[k].value;
+            o.textContent = list[k].text;
+            tour.appendChild(o);
+        }
+        tour.value = hasValue(tour, current) ? current : '';
+    }
+
+    function syncTourOptions() {
+        if (dest.value === 'zanzibar') {
+            var list = [];
+            for (var m = 0; m < ZANZIBAR_TOURS.length; m++) {
+                list.push({ value: slugify(ZANZIBAR_TOURS[m]), text: ZANZIBAR_TOURS[m] });
+            }
+            setOptions(list);
+        } else {
+            setOptions(DEFAULT_LIST);
+        }
+    }
+
+    dest.addEventListener('change', syncTourOptions);
+})();
+</script>
+</body>
 </html>
 
 
