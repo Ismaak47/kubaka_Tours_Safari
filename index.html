@@ -193,7 +193,7 @@
     justify-content: center;
     background: transparent;
     border-radius: 6px;
-    padding: 6px 12px;
+    padding: 4px 8px;
     line-height: 0;
 }
 @media (min-width: 1024px) {
@@ -201,7 +201,7 @@
         height: 64px;
     }
     .Header_logo a {
-        padding: 8px 14px;
+        padding: 6px 12px;
     }
 }
 @media (max-width: 767px) {
@@ -209,7 +209,35 @@
         height: 48px;
     }
     .Header_logo a {
-        padding: 5px 10px;
+        padding: 3px 6px;
+    }
+}
+
+/* ===== Compact header rhythm: less vertical space, logo & nav aligned ===== */
+body .Header_root {
+    padding-top: 4px;
+}
+body .Header_root .Header_main {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+body .Header_root .Header_bar {
+    padding-bottom: 4px;
+}
+body .Header_root .Header_tab {
+    padding-bottom: 6px;
+}
+@media (min-width: 1024px) {
+    /* Desktop: cancel the vendor rule that indents the logo row 16px past the
+       nav row, so the logo's left edge lines up with the first nav item. */
+    body .Header_root .Header_bar {
+        padding-top: 0;
+    }
+    body .Header_root .Header_main {
+        padding-inline-start: 0;
+    }
+    body .Header_root .Header_logo {
+        margin-inline-start: -16px;
     }
 }
 
