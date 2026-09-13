@@ -286,6 +286,19 @@ body [data-testid="searchbox-layout-wide"] .dc6e4674ea button[type="submit"] {
         margin-inline: auto;
     }
 }
+/* Phones only (<=767.98px): the blue submit button is narrower than its full-width
+   white cell (the page's own "> div:last-child" white rule beats the vendor gold),
+   leaving blank side areas. Paint just the button cell with the same blue as the
+   button's visible face (#006ce4 via var(--bui_color_action_background), the exact
+   variable providing the button's ::before face layer) so the fill is edge-to-edge,
+   incl. the corner gaps inside the button radius, with no tone mismatch. The
+   button's own box, radius, text, icon and behaviour are untouched, and the extra
+   class keeps this rule (0,3,2) above the white override (0,2,2). */
+@media (max-width: 767.98px) {
+    body [data-testid="searchbox-layout-wide"] > div:last-child.dc6e4674ea {
+        background-color: var(--bui_color_action_background);
+    }
+}
 body [data-testid="searchbox-layout-wide"] .e2d98352ed > span[data-testid="searchbox-form-button-icon"] {
     position: absolute;
     inset-inline-end: 0;
