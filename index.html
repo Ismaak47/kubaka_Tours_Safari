@@ -541,6 +541,13 @@ body [data-testid="searchbox-layout-wide"] .e2d98352ed > span[data-testid="searc
     transform: translateY(-50%);
     height: 24px;
 }
+/* ===== Top Tourist Attractions: hide the blue location-badge chip =====
+   The pin-shaped .dff2e52086 chip repeats the country name ("Tanzania") in blue
+   inside every attraction card. Scoped to this carousel only so review-score
+   badges using the same class elsewhere on the page stay visible. */
+[aria-label="Top Tourist Attractions"] [data-testid="webcore-carousel-review"] .dff2e52086 {
+    display: none;
+}
 </style>
 </head>
   <body data-bui-theme="traveller-light" data-capla-fpr="true" style="isolation: isolate;" data-bui-keyboard="">
