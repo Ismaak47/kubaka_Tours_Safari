@@ -175,12 +175,16 @@
                     
             .ot-floating-button__front{background-image:url('https://cdn.cookielaw.org/logos/static/ot_persistent_cookie_icon.png')}</style><link rel="stylesheet" type="text/css" href="./Kubaka Tours &amp; Safari_files/5aeeadf2.75f5b865.chunk.css"><script src="./Kubaka Tours &amp; Safari_files/sync" class="optanon-category-C0004 ot-vscat-C0004 "></script><script type="text/javascript" async="" src="./Kubaka Tours &amp; Safari_files/f.txt" nonce="" class="optanon-category-C0004 "></script><script src="./Kubaka Tours &amp; Safari_files/15005356.js.download" type="text/javascript" async="" data-ueto="ueto_3cd01b5f8c" class="optanon-category-C0004 "></script>
 <style>
-/* ===== Header logo (replacing Booking.com) ===== */
+/* ===== Header logo (replacing Booking.com) =====
+   Sizes are the maximum that fit the existing header rows with ZERO header
+   height change: the chip's vertical padding is 0 so the artwork fills the
+   row exactly (base 52px / tablet 62px / desktop 70px = +8-11% larger than
+   the previous 48/56/64px). */
 .Header_logo img.header-logo-new {
     display: block;
     width: auto;
-    height: 56px;
-    max-height: 64px;
+    height: 52px;
+    max-height: 70px;
     max-width: 60vw;
     object-fit: contain;
     vertical-align: middle;
@@ -193,23 +197,25 @@
     justify-content: center;
     background: transparent;
     border-radius: 6px;
-    padding: 3px 8px;
+    padding: 0 8px;
     line-height: 0;
+}
+@media (min-width: 768px) {
+    .Header_logo img.header-logo-new {
+        height: 62px;
+    }
 }
 @media (min-width: 1024px) {
     .Header_logo img.header-logo-new {
-        height: 64px;
+        height: 70px;
     }
     .Header_logo a {
-        padding: 3px 12px;
+        padding: 0 12px;
     }
 }
 @media (max-width: 767px) {
-    .Header_logo img.header-logo-new {
-        height: 48px;
-    }
     .Header_logo a {
-        padding: 2px 6px;
+        padding: 0 6px;
     }
 }
 
