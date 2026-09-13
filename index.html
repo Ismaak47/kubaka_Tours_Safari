@@ -258,14 +258,15 @@ body .Header_root .Header_tab {
    - Sits at the far right of the logo row (Header_main has flex-grow:1,
      so the group is pushed to the right edge automatically).
    - Vertically centered by the bar's existing align-items:center.
-   - Tight compact group: 6px gap between icon buttons (spec: 6-8px max).
-   - Hidden on small screens (<640px) so the mobile header stays clean;
-     visible on tablet/desktop where there is room.
+   - Tight compact group: 2px gap between icon buttons.
+   - Visible on ALL screen sizes: on phones (<640px) the buttons shrink to
+     32px and the side margin tightens so the compact group fits beside the
+     logo without crowding or overflow.
    - Placeholder hrefs ("#") in the HTML below - swap in real profile URLs. */
 .Header_social {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
     margin-inline-start: 12px;
 }
 .Header_social a {
@@ -294,10 +295,15 @@ body .Header_root .Header_tab {
     height: 18px;
     fill: currentColor;
 }
-/* Mobile: keep the header uncluttered - logo + primary nav only */
+/* Mobile: keep the icons visible but compact - slightly smaller buttons and
+   a tighter side margin so the group sits cleanly beside the logo */
 @media (max-width: 639.98px) {
     .Header_social {
-        display: none;
+        margin-inline-start: 8px;
+    }
+    .Header_social a {
+        width: 32px;
+        height: 32px;
     }
 }
 /* Respect users who prefer reduced motion: keep color feedback, drop the lift */
