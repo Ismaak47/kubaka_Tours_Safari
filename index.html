@@ -645,6 +645,10 @@ vf:google_tag_manager["rm"]["9615461"](126)})}});</script><iframe id="universal_
         'The Rock Restaurant', 'Sunset Dhow Cruise', 'Swahili Cooking Class', 'Forodhani Night Market',
         'Mangrove Canoe Tour', 'Cultural Village Tour', 'Quad Bike Tour', 'Island Excursion Tour'
     ];
+    var TANZANIA_PARKS = [
+        'Serengeti', 'Ngorongoro', 'Tarangire', 'Lake Manyara', 'Mikumi',
+        'Selous', 'Ruaha', 'Saadani', 'Katavi', 'Gombe Stream'
+    ];
     var PLACEHOLDER = 'Select tour type';
 
     // snapshot the original options (placeholder + default tour types) at load
@@ -682,13 +686,19 @@ vf:google_tag_manager["rm"]["9615461"](126)})}});</script><iframe id="universal_
         tour.value = hasValue(tour, current) ? current : '';
     }
 
+    function buildList(names) {
+        var list = [];
+        for (var m = 0; m < names.length; m++) {
+            list.push({ value: slugify(names[m]), text: names[m] });
+        }
+        return list;
+    }
+
     function syncTourOptions() {
         if (dest.value === 'zanzibar') {
-            var list = [];
-            for (var m = 0; m < ZANZIBAR_TOURS.length; m++) {
-                list.push({ value: slugify(ZANZIBAR_TOURS[m]), text: ZANZIBAR_TOURS[m] });
-            }
-            setOptions(list);
+            setOptions(buildList(ZANZIBAR_TOURS));
+        } else if (dest.value === 'tanzania') {
+            setOptions(buildList(TANZANIA_PARKS));
         } else {
             setOptions(DEFAULT_LIST);
         }
