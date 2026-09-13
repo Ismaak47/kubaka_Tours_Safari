@@ -1,0 +1,513 @@
+{
+  "375": {
+    "width": 375,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 375,
+    "headerH": 108,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "NAV.Header_bar",
+    "bar": {
+      "top": 2,
+      "left": 16,
+      "right": 359,
+      "bottom": 60,
+      "w": 343,
+      "h": 58
+    },
+    "main": {
+      "top": 2,
+      "left": 16,
+      "right": 183,
+      "bottom": 58,
+      "w": 167,
+      "h": 56
+    },
+    "logo": {
+      "top": 4,
+      "left": 16,
+      "right": 90,
+      "bottom": 56,
+      "w": 74,
+      "h": 52
+    },
+    "tab": {
+      "top": 60,
+      "left": 16,
+      "right": 359,
+      "bottom": 108,
+      "w": 343,
+      "h": 48
+    },
+    "social": {
+      "top": 14,
+      "left": 191,
+      "right": 359,
+      "bottom": 46,
+      "w": 168,
+      "h": 32
+    },
+    "navrow": {
+      "top": 60,
+      "left": 0,
+      "right": 375,
+      "bottom": 105,
+      "w": 375,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 108,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "576": {
+    "width": 576,
+    "scrollWidth": 601,
+    "clientWidth": 576,
+    "hOverflow": true,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 576,
+    "headerH": 108,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 16,
+      "right": 560,
+      "bottom": 60,
+      "w": 544,
+      "h": 58
+    },
+    "main": {
+      "top": 2,
+      "left": 16,
+      "right": 384,
+      "bottom": 58,
+      "w": 368,
+      "h": 56
+    },
+    "logo": {
+      "top": 4,
+      "left": 16,
+      "right": 90,
+      "bottom": 56,
+      "w": 74,
+      "h": 52
+    },
+    "tab": {
+      "top": 60,
+      "left": 16,
+      "right": 560,
+      "bottom": 108,
+      "w": 544,
+      "h": 48
+    },
+    "social": {
+      "top": 14,
+      "left": 392,
+      "right": 560,
+      "bottom": 46,
+      "w": 168,
+      "h": 32
+    },
+    "navrow": {
+      "top": 60,
+      "left": 0,
+      "right": 576,
+      "bottom": 105,
+      "w": 576,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 108,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "640": {
+    "width": 640,
+    "scrollWidth": 625,
+    "clientWidth": 625,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 625,
+    "headerH": 108,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 16,
+      "right": 609,
+      "bottom": 60,
+      "w": 593,
+      "h": 58
+    },
+    "main": {
+      "top": 2,
+      "left": 16,
+      "right": 409,
+      "bottom": 58,
+      "w": 393,
+      "h": 56
+    },
+    "logo": {
+      "top": 4,
+      "left": 16,
+      "right": 90,
+      "bottom": 56,
+      "w": 74,
+      "h": 52
+    },
+    "tab": {
+      "top": 60,
+      "left": 16,
+      "right": 609,
+      "bottom": 108,
+      "w": 593,
+      "h": 48
+    },
+    "social": {
+      "top": 12,
+      "left": 421,
+      "right": 609,
+      "bottom": 48,
+      "w": 188,
+      "h": 36
+    },
+    "navrow": {
+      "top": 60,
+      "left": 0,
+      "right": 625,
+      "bottom": 105,
+      "w": 625,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 108,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "768": {
+    "width": 768,
+    "scrollWidth": 753,
+    "clientWidth": 753,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 753,
+    "headerH": 118,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 16,
+      "right": 737,
+      "bottom": 70,
+      "w": 721,
+      "h": 68
+    },
+    "main": {
+      "top": 2,
+      "left": 16,
+      "right": 537,
+      "bottom": 68,
+      "w": 521,
+      "h": 66
+    },
+    "logo": {
+      "top": 4,
+      "left": 16,
+      "right": 106,
+      "bottom": 66,
+      "w": 90,
+      "h": 62
+    },
+    "tab": {
+      "top": 70,
+      "left": 16,
+      "right": 737,
+      "bottom": 118,
+      "w": 721,
+      "h": 48
+    },
+    "social": {
+      "top": 17,
+      "left": 549,
+      "right": 737,
+      "bottom": 53,
+      "w": 188,
+      "h": 36
+    },
+    "navrow": {
+      "top": 70,
+      "left": 0,
+      "right": 753,
+      "bottom": 115,
+      "w": 753,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 118,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "1024": {
+    "width": 1024,
+    "scrollWidth": 1009,
+    "clientWidth": 1009,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 1009,
+    "headerH": 126,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 16,
+      "right": 993,
+      "bottom": 78,
+      "w": 977,
+      "h": 76
+    },
+    "main": {
+      "top": 2,
+      "left": 32,
+      "right": 777,
+      "bottom": 76,
+      "w": 745,
+      "h": 74
+    },
+    "logo": {
+      "top": 4,
+      "left": 16,
+      "right": 124,
+      "bottom": 74,
+      "w": 108,
+      "h": 70
+    },
+    "tab": {
+      "top": 78,
+      "left": 16,
+      "right": 993,
+      "bottom": 126,
+      "w": 977,
+      "h": 48
+    },
+    "social": {
+      "top": 21,
+      "left": 789,
+      "right": 977,
+      "bottom": 57,
+      "w": 188,
+      "h": 36
+    },
+    "navrow": {
+      "top": 78,
+      "left": 0,
+      "right": 1009,
+      "bottom": 123,
+      "w": 1009,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 126,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "1280": {
+    "width": 1280,
+    "scrollWidth": 1265,
+    "clientWidth": 1265,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 1265,
+    "headerH": 126,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 79,
+      "right": 1187,
+      "bottom": 78,
+      "w": 1108,
+      "h": 76
+    },
+    "main": {
+      "top": 2,
+      "left": 95,
+      "right": 971,
+      "bottom": 76,
+      "w": 876,
+      "h": 74
+    },
+    "logo": {
+      "top": 4,
+      "left": 79,
+      "right": 186,
+      "bottom": 74,
+      "w": 108,
+      "h": 70
+    },
+    "tab": {
+      "top": 78,
+      "left": 79,
+      "right": 1187,
+      "bottom": 126,
+      "w": 1108,
+      "h": 48
+    },
+    "social": {
+      "top": 21,
+      "left": 983,
+      "right": 1171,
+      "bottom": 57,
+      "w": 188,
+      "h": 36
+    },
+    "navrow": {
+      "top": 78,
+      "left": 63,
+      "right": 1203,
+      "bottom": 123,
+      "w": 1140,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 126,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  },
+  "1440": {
+    "width": 1440,
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "hOverflow": false,
+    "headerTop": 0,
+    "headerLeft": 0,
+    "headerW": 1425,
+    "headerH": 126,
+    "headerBg": "rgb(245, 245, 245)",
+    "headerPos": "static",
+    "headerPadding": "2px 0px 0px",
+    "headerBorderTop": "0px rgb(255, 255, 255) none",
+    "headerBoxShadow": "none",
+    "topEl": "DIV.Header_main",
+    "bar": {
+      "top": 2,
+      "left": 159,
+      "right": 1267,
+      "bottom": 78,
+      "w": 1108,
+      "h": 76
+    },
+    "main": {
+      "top": 2,
+      "left": 175,
+      "right": 1051,
+      "bottom": 76,
+      "w": 876,
+      "h": 74
+    },
+    "logo": {
+      "top": 4,
+      "left": 159,
+      "right": 266,
+      "bottom": 74,
+      "w": 108,
+      "h": 70
+    },
+    "tab": {
+      "top": 78,
+      "left": 159,
+      "right": 1267,
+      "bottom": 126,
+      "w": 1108,
+      "h": 48
+    },
+    "social": {
+      "top": 21,
+      "left": 1063,
+      "right": 1251,
+      "bottom": 57,
+      "w": 188,
+      "h": 36
+    },
+    "navrow": {
+      "top": 78,
+      "left": 143,
+      "right": 1283,
+      "bottom": 123,
+      "w": 1140,
+      "h": 45
+    },
+    "strip": [
+      {
+        "tag": "HEADER",
+        "cls": " Header_root",
+        "top": 0,
+        "bottom": 126,
+        "bg": "rgb(245, 245, 245)"
+      }
+    ]
+  }
+}
